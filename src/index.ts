@@ -19,6 +19,10 @@ app.post('/readText', (req: Request, res: Response) => {
   const { file }: {file: File} = req.body;
   console.log(file);
 
+  if (!file) {
+    return res.status(400).send('File is required');
+  }
+  
   res.status(200).send('File received');
 });
 
