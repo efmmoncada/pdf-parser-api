@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const app = express();
+export const app = express();
 
 app.use(express.json());
 
@@ -22,7 +22,7 @@ app.post('/readText', (req: Request, res: Response) => {
   if (!file) {
     return res.status(400).send('File is required');
   }
-  
+
   res.status(200).send('File received');
 });
 
